@@ -11,6 +11,9 @@ export default {
   name: 'App',
   components: {
     Portfolio
+  },
+  created: () => {
+    document.title = 'My Portfolio'
   }
 }
 </script>
@@ -18,10 +21,10 @@ export default {
 <style>
 
 :root {
-  --bg-color: #333;
-  --color1: #eee;
-  --color2: #bbb;
-  --color3: #aaa;
+  --bg-color: #fffffa;
+  --color1: #6b95e3;
+  --color2: #84a5e3;
+  --color3: #5079c7;
 }
 
 *{
@@ -31,9 +34,14 @@ export default {
 }
 
 body {
-  background-color: var(--bg-color);
   font-family: 'Roboto', sans-serif;
-  color: var(--color1);
+  color: #333;
+  height: 5000px;
+  background-color: var(--bg-color);
+}
+
+a {
+  color: #333; 
 }
 
 </style>

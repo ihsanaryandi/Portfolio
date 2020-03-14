@@ -1,14 +1,17 @@
 <template>
   <div id="portfolio">
     <Header />
-    <ProgrammingSkills />
+    <About />
+    <Skills />
   </div>
 </template>
 
 <script>
 
-import Header from './Portfolio/Header.vue'
-import ProgrammingSkills from './Portfolio/ProgrammingSkills.vue'
+// Components
+import Header from './Portfolio/Header'
+import About  from './Portfolio/About'
+import Skills  from './Portfolio/Skills'
 
 export default {
 
@@ -16,7 +19,8 @@ export default {
 
   components: {
     Header,
-    ProgrammingSkills
+    About,
+    Skills
   },
 
   data () {

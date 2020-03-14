@@ -1,12 +1,12 @@
 <template>
-	<div class="skill-percent">
-		<h5>{{ skillName }}</h5>
-		<div class="d-flex align-items-center mb-2">
-			<div class="percent-bar">
-				<div :style="{ '--percent': `${percent}%`, '--colorBar': colorBar }"></div>
+	<div class="skill">
+		<h5 class="language">{{ language }}</h5>
+		<div class="d-flex align-items-center">
+			<div class="percent">
+				<div :style="{ '--percent': `${percent.toString()}%` }"></div>
 			</div>
-			<span>{{ `${percent}%` }}</span>
-		</div>	
+			<span class="ml-3">{{ `${percent.toString()}%` }}</span>
+		</div>
 	</div>
 </template>
 
@@ -15,53 +15,50 @@ export default {
 
 	name: 'SkillPercent',
 
-	data () {
-		return {
-
-		}
-	},
-
 	props: {
-		skillName: {
+		language: {
 			type: String,
 			required: true
 		},
 		percent: {
 			type: Number,
 			default: 0
-		},
-		colorBar: {
-			type: String,
-			default: 'lightgreen'
+		}
+	},
+
+	data () {
+		return {
+
 		}
 	}
 }
 </script>
 
 <style lang="css" scoped>
+.skill {
+	margin-bottom: 20px;
+}
 
-h5 {
+.language {
+	font-size: 20px;
+}
+
+.percent {
+	width: 100%;
+	padding: 3px;
+	border-radius: 50px;
+	background-color: #fff;
+}
+
+.percent div {
+	border-radius: 50px;
+	width: var(--percent);
+	height: 10px;
+	background-color: var(--color1); 
+}
+
+.percent + span {
+	font-size: 18px;
 	color: var(--color2);
 }
-
-.percent-bar {
-	width: 100%;
-	height: 5px;
-	background-color: var(--color2);
-	border-radius: 20px;
-}
-
-.percent-bar div {
-	width: var(--percent);
-	height: 100%;
-	border-radius: 20px;
-	background-color: var(--colorBar);
-	box-shadow: 0 0 20px var(--colorBar);
-}
-
-.percent-bar + span {
-	padding: 0 20px;
-	font-size: 18px;
-}
-
 </style>

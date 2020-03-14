@@ -1,38 +1,50 @@
 <template>
-	<header id="header">
+	<div id="header">
+		<Navbar />
 		<div class="container">
-			<div class="my-name">
-				<a href="#">Ihsan Aryandi</a>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-lg-6 col-md-6 mb-4">
-					<h1 class="title">Web Developer</h1>
-					<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</p>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="opening">
+						<h1>Web Developer</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.</p>
+						<div class="cta">
+							<a href="#">Hire Me</a>
+							<a class="outline" href="#">See My Works</a>
+						</div> 
+					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 text-center">
+				<div class="col-lg-6">
 					<div class="illustration">
-						<img :src="illustration2" alt="illustration">
+						<img :src="illustration">
 					</div>
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 </template>
 
 <script>
 
-import illustration2 from '../../assets/illustration2.svg'
+// Components
+import Navbar from './Navbar'
+
+// Assets
+import illustration from '../../assets/illustration1.svg'
 
 export default {
 
 	name: 'Header',
 
+	components: {
+		Navbar
+	},
+
 	data () {
 		return {
-			illustration2
+			illustration
 		}
 	}
 }
@@ -41,42 +53,81 @@ export default {
 <style lang="css" scoped>
 
 #header {
-	height: 100vh;
-	margin-bottom: 50px;
+	margin-bottom: 150px;
 }
 
-.my-name {
-	padding: 15px 0;
-	margin-bottom: 40px;
+.opening {
+	padding: 10px 0;
 }
 
-.my-name a {
-	font-size: 28px;
-	color: #eee;
-	letter-spacing: 1.5px;
-	/*font-weight: ;*/
-	text-decoration: none;
-}
-
-.title {
+.opening h1 {
+	font-size: 3em;
 	font-weight: 200;
-	font-size: 50px;
-	margin-bottom: 10px;
 }
 
-.text {
-	color: var(--color2);
+.opening p {
+	color: #888;
+}
+
+.cta {
+	margin-top: 40px;
+}
+
+.cta a {
+	display: inline-block;
+	background-color: var(--color1);
+	color: #fff;
+	font-size: 20px;
+	padding: 8px 30px;
+	margin-right: 15px;
+	border-radius: 5px;
+	text-decoration: none;
+	border: 2px solid var(--color1);
+	margin-bottom: 10px;
+	transition: .2s;
+}
+
+.cta a:active {
+	opacity: .8;
+}
+
+.cta a:last-child {
+	margin: 0;
+}
+
+.cta a.outline {
+	background-color: #fff;
+	color: var(--color1);
+}
+
+.cta a:hover {
+	background-color: #fff;
+	color: var(--color1);	
+}
+
+.cta a.outline:hover {
+	background-color: var(--color1);
+	color: #fff;
 }
 
 .illustration {
-	max-width: 500px;
+	width: 90%;
+	margin: auto;
 }
 
 .illustration img {
 	width: 100%;
 }
 
+@media only screen and (max-width: 990px) {
+	.opening {
+		margin-bottom: 50px;
+	}
+}
+
 </style>
+
+
 
 
 
